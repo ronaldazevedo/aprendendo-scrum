@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/calculadora.css">
+</head>
+<body>
+    <div class="container bg-white">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Selecione</h2>
+                <label>
+                    <input type="radio" name="tipo" value="adulto" onchange="atualizarSelecao('tipo')">
+                    <span class="opcao-texto ativo" id="lblAdulto">Adulto</span>
+                </label>
+                <label>
+                    <input type="radio" name="tipo" value="crianca" onchange="atualizarSelecao('tipo')">
+                    <span class="opcao-texto" id="lblCrianca">Criança</span>
+                </label>
+                <p class="sub-info" id="infoIdade"></p>
+            </div>
+            <div class="col-lg-6"></div>
+
+            <h2>Sexo</h2>
+            <label>
+                <input type="radio" name="sexo" value="Masculino" onchange="atualizarSelecao('sexo')">
+                    <span class="opcao-texto ativo" id="lblMasculino">Masculino</span>
+            </label>
+            <label>
+                <input type="radio" name="sexo" value="Feminino" onchange="atualizarSelecao('sexo')">
+                <span class="opcao-texto" id="lblFeminino">Feminino</span>
+            </label>
+            <p class="sub-info" id="infoSexo"></p>
+        </div>
+        
+    </div>
+
+        <script> 
+            function atualizarSelecao(grupo)
+            {
+                console.log("Entrei no atualizarSlecao: " + grupo);
+                if(grupo === 'tipo')
+            {
+
+        
+                const tipoSelecionado = document.querySelector('input[name="tipo"]:checked').value;
+                const infoIdade = document.getElementById('infoIdade');
+            
+                if(tipoSelecionado === 'adulto')
+                {
+                    document.getElementById('lblAdulto').classList.add("laranja");
+                    document.getElementById('lblCrianca').classList.remove("laranja");
+                    infoIdade.textContent = 'Acima de 19 anos de idade';
+                }
+                else
+                {
+                    document.getElementById('lblCrianca').classList.add("laranja");
+                    document.getElementById('lblAdulto').classList.remove("laranja");
+                    infoIdade.textContent = 'Abaixo de 19 anos de idade';
+
+                }
+            }
+
+            if(grupo === 'sexo')
+            {
+                
+                const tipoSelecionado = document.querySelector('input[name="sexo"]:checked').value;
+            
+                if(tipoSelecionado === 'masculino')
+                {
+                    document.getElementById('lblmasculino').classList.add('laranja');
+                    document.getElementById('lblFeminino').classList.remove('laranja');
+                }
+                else
+                {
+                    document.getElementById('lblFeminino').classList.add('laranja');
+                    document.getElementById('lblmasculino').classList.remove('laranja');
+                    
+
+                }
+            }
+        }
+        </script>
+
+</body>
+</html>
