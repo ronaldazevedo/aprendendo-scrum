@@ -1,10 +1,21 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffd900;
+    background-color: #4093ff;
     margin: 0;
     padding: 0; 
 }
 
 .laranja{
-    color: orange;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.rosa{
+    color: rgb(235, 164, 223);
+    font-weight: bold;
+}
+
+.azul{
+    color: rgb(0, 76, 190);
+    font-weight: bold;
 }
